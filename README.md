@@ -4,7 +4,7 @@
 
 ## Запускаем контейнеры (пока только 1)
 
-```docker build -t prom-demo-api . && docker run --rm -it -p 80:80 prom-demo-api
+docker build -t prom-demo-api . && docker run --rm -it -p 80:80 prom-demo-api
 
 
 ## Собираем бизнес-метрики
