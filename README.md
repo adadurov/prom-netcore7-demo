@@ -2,28 +2,28 @@
 # How to use
 
 
-## Запускаем контейнеры (пока только 1)
+## Р—Р°РїСѓСЃРєР°РµРј РєРѕРЅС‚РµР№РЅРµСЂС‹ (РїРѕРєР° С‚РѕР»СЊРєРѕ 1)
 
 ```docker build -t prom-demo-api . && docker run --rm -it -p 80:80 prom-demo-api
 
 
-## Собираем бизнес-метрики
+## РЎРѕР±РёСЂР°РµРј Р±РёР·РЅРµСЃ-РјРµС‚СЂРёРєРё
 
 https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection
 
 
-## Собираем метрики приложения (отзывчивость API, потребление ресурсов и т.д.)
+## РЎРѕР±РёСЂР°РµРј РјРµС‚СЂРёРєРё РїСЂРёР»РѕР¶РµРЅРёСЏ (РѕС‚Р·С‹РІС‡РёРІРѕСЃС‚СЊ API, РїРѕС‚СЂРµР±Р»РµРЅРёРµ СЂРµСЃСѓСЂСЃРѕРІ Рё С‚.Рґ.)
 
 https://aevitas.medium.com/expose-asp-net-core-metrics-with-prometheus-15e3356415f4
 
 
-## Еще один сбор логов ASP.NET Core (все в docker)
+## Р•С‰Рµ РѕРґРёРЅ СЃР±РѕСЂ Р»РѕРіРѕРІ ASP.NET Core (РІСЃРµ РІ docker)
 
 https://dale-bingham-soteriasoftware.medium.com/net-core-web-api-metrics-with-prometheus-and-grafana-fe84a52d9843
 
 
 
-## Полезные ссылки
+## РџРѕР»РµР·РЅС‹Рµ СЃСЃС‹Р»РєРё
 
 https://prometheus.io/docs/prometheus/latest/getting_started/
 
@@ -31,6 +31,6 @@ https://github.com/prometheus-net/prometheus-net/
 
 
 
-## Прочие ссылки
+## РџСЂРѕС‡РёРµ СЃСЃС‹Р»РєРё
 
 https://stackoverflow.com/questions/74554219/wiring-up-docker-compose-prometheus-with-bare-asp-net-core-web-api-using-https
