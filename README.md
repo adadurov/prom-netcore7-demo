@@ -30,7 +30,7 @@ This demo doesn't include product/business metrics (yet).
 - choose Data Sources
 - click Add new data source (blue button to the right)
 - choose Prometheus
-- URL: http://prometheus:9090 (thg host is inside docker-compose network)
+- URL: http://prometheus:9090 (the host is inside docker-compose network)
 - click 'test and save' at the bottom
 
 ### Import a preconfigured dashboard JSON file
@@ -48,12 +48,10 @@ Add '&' to send the process to background and repeat a few times to run ~7..10 R
 
 ## Some links to how-tos
 
-- collecting business metrics: 
-https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection
-- collecting app and host metrics (API responsiveness, resource consumption etc.):
-https://aevitas.medium.com/expose-asp-net-core-metrics-with-prometheus-15e3356415f4
-- yet another ASP.NET core metrics collection how-to:
+- ASP.NET core metrics with Prometheus:
 https://dale-bingham-soteriasoftware.medium.com/net-core-web-api-metrics-with-prometheus-and-grafana-fe84a52d9843
+- collecting business metrics:
+https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection
 
 
 ## Prometheus-related links
