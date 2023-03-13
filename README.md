@@ -2,35 +2,49 @@
 # How to use
 
 
-## Запускаем контейнеры (пока только 1)
+## Launch the containers (podman- or docker- compose)
 
-docker build -t prom-demo-api . && docker run --rm -it -p 80:80 prom-demo-api
+`docker build -t prom-demo-api`
+
+`docker compose up`
+
+### URLs of services from the outside of docker-compose network:
+
+- Swagger for WeatherForecast is at http://localhost:80
+- Prometheus is at http://localhost:9090)
+- Grafana is at http://localhost:3000
+
+## Connect Grafana to Prometheus and configure a dashboard
+
+### Add data source to Grafana:
+- select cog (bottom left side menu) for settings
+- choose Data Sources
+- click Add new data source (blue button to the right)
+- choose Prometheus
+- URL: http://prometheus:9090 (thg host is inside docker-compose network)
+- click 'test and save' at the bottom
+
+### Import a preconfigured dashboard JSON file
+- choose 'Dashboards' > import > upload dashboard JSON file
+- choose an existing dashboard from grafana folder in the repository (prometheus-net_rev4.json)
+- run like curl (in bash infinite loop, maybe 20..30 in parallel)
+
+## Run a workload against Weather Forecast API
+
+`curl -X 'GET' 'http://localhost/WeatherForecast' -H 'accept: text/plain'`
 
 
-## Собираем бизнес-метрики
+## Some links to how-tos
 
+- collecting business metrics: 
 https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection
-
-
-## Собираем метрики приложения (отзывчивость API, потребление ресурсов и т.д.)
-
+- collecting app and host metrics (API responsiveness, resource consumption etc.):
 https://aevitas.medium.com/expose-asp-net-core-metrics-with-prometheus-15e3356415f4
-
-
-## Еще один сбор логов ASP.NET Core (все в docker)
-
+- yet another ASP.NET core metrics collection how-to:
 https://dale-bingham-soteriasoftware.medium.com/net-core-web-api-metrics-with-prometheus-and-grafana-fe84a52d9843
 
 
+## Prometheus-related links
 
-## Полезные ссылки
-
-https://prometheus.io/docs/prometheus/latest/getting_started/
-
-https://github.com/prometheus-net/prometheus-net/
-
-
-
-## Прочие ссылки
-
-https://stackoverflow.com/questions/74554219/wiring-up-docker-compose-prometheus-with-bare-asp-net-core-web-api-using-https
+- https://prometheus.io/docs/prometheus/latest/getting_started/
+- https://github.com/prometheus-net/prometheus-net/
