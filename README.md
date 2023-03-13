@@ -1,8 +1,17 @@
 
-# How to use
+# What it is and is not
 
+This is a demo of ASP.NET Core + Prometheus + Grafana dashboard
+for host and app metrics collected using prometheus-net.AspNetCore nuget package.
+It runs within docker-compose containers.
 
-## Launch the containers (podman- or docker- compose)
+## What it is not (but could be after next steps)
+
+This demo doesn't include product/business metrics (yet).
+
+# How to build and use
+
+## Build and launch the containers (podman- or docker- compose)
 
 `docker build -t prom-demo-api`
 
@@ -29,10 +38,13 @@
 - choose an existing dashboard from grafana folder in the repository (prometheus-net_rev4.json)
 - run like curl (in bash infinite loop, maybe 20..30 in parallel)
 
-## Run a workload against Weather Forecast API
+## Run some workload against Weather Forecast API
 
-`curl -X 'GET' 'http://localhost/WeatherForecast' -H 'accept: text/plain'`
+`while true; do curl -X 'GET' 'http://localhost/WeatherForecast' > /dev/null; sleep 1; done`
 
+Add '&' to send the process to background and repeat a few times to run ~7..10 RPS.
+
+## Observe the metrics on your dashboard
 
 ## Some links to how-tos
 
