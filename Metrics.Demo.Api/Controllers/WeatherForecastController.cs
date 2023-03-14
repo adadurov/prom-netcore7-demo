@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Metrics.Demo.Api.Controllers;
 
@@ -18,7 +19,7 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet(Name = "GetWeatherForecast", Order = 1)]
     public async Task<IEnumerable<WeatherForecast>> Get()
     {
         var rng = new Random((int)DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
@@ -33,4 +34,17 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+    [HttpGet("NotFound", Order = 3)]
+    public IActionResult ReturnNotFound()
+    {
+        return StatusCode((int)HttpStatusCode.NotFound);
+    }
+
+    [HttpGet("InternalServerError", Order = 4)]
+    public IActionResult ReturnInternalServerError()
+    {
+        return StatusCode((int)HttpStatusCode.InternalServerError);
+    }
+
 }

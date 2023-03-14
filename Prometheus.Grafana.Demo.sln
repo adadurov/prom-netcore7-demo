@@ -5,11 +5,14 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metrics.Demo.Api", "Metrics.Demo.Api\Metrics.Demo.Api.csproj", "{48317444-92A9-41ED-B295-6B4B099EAEB7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{1B9E7A4B-50A7-4BD0-8BB3-27EF3B834980}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{54183E20-22B8-415A-878E-BECA40DAC36E}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		docker-compose.yaml = docker-compose.yaml
+		Dockerfile = Dockerfile
 		global.json = global.json
+		prometheus.yml = prometheus.yml
 		README.md = README.md
 	EndProjectSection
 EndProject

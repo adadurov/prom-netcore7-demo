@@ -40,9 +40,15 @@ This demo doesn't include product/business metrics (yet).
 
 ## Run some workload against Weather Forecast API
 
+Use an URL for successful requests:
+
 `while true; do curl -X 'GET' 'http://localhost/WeatherForecast' > /dev/null; sleep 1; done`
 
-Add '&' to send the process to background and repeat a few times to run ~7..10 RPS.
+Use an URL for failed requests:
+
+`while true; do curl -X 'GET' 'http://localhost/WeatherForecast/InternalServerError' > /dev/null; sleep 1; done`
+
+Add '&' to send the process to background and repeat a few times to run ~7..10 RPS (or more).
 
 ## Observe the metrics on your dashboard
 
